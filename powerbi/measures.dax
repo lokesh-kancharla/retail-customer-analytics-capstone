@@ -1,0 +1,56 @@
+Total Revenue = SUM(retail_sales[Revenue])
+
+Total Profit = SUM(retail_sales[Profit])
+
+Total Orders = DISTINCTCOUNT(retail_sales[Order_ID])
+
+Total Customers = DISTINCTCOUNT(retail_sales[Customer_ID])
+
+Average Order Value = DIVIDE([Total Revenue], [Total Orders])
+
+Profit Margin % = DIVIDE([Total Profit], [Total Revenue])
+
+Repeat Customers =
+CALCULATE(
+    DISTINCTCOUNT(retail_sales[Customer_ID]),
+    FILTER(
+        VALUES(retail_sales[Customer_ID]),
+        CALCULATE(DISTINCTCOUNT(retail_sales[Order_ID])) > 1
+    )
+)
+
+Repeat Customer Rate % = DIVIDE([Repeat Customers], [Total Customers])
+
+Revenue per Customer = DIVIDE([Total Revenue], [Total Customers])
+
+Previous Month Revenue =
+CALCULATE(
+    [Total Revenue],
+    DATEADD('Calendar'[Date], -1, MONTH)
+)
+
+MoM Revenue Growth % =
+DIVIDE(
+    [Total Revenue] - [Previous Month Revenue],
+    [Previous Month Revenue]
+)
+
+Previous Year Revenue =
+CALCULATE(
+    [Total Revenue],
+    SAMEPERIODLASTYEAR('Calendar'[Date])
+)
+
+YoY Revenue Growth % =
+DIVIDE(
+    [Total Revenue] - [Previous Year Revenue],
+    [Previous Year Revenue]
+)
+
+Customer Rank by Revenue =
+RANKX(
+    ALL(retail_sales[Customer_ID]),
+    [Total Revenue],
+    ,
+    DESC
+)
