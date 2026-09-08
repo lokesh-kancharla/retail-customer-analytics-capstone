@@ -1,0 +1,21 @@
+order_id,order_date,customer_id,customer_segment,region,product_id,product_name,category,quantity,unit_price,unit_cost,discount_pct
+O1001,2026-01-05,C001,Consumer,South,P101,Wireless Mouse,Electronics,2,25.00,14.00,0.05
+O1002,2026-01-08,C002,Corporate,West,P102,Mechanical Keyboard,Electronics,1,80.00,48.00,0.10
+O1003,2026-01-12,C003,Consumer,Midwest,P201,Office Chair,Furniture,1,220.00,150.00,0.15
+O1004,2026-01-18,C001,Consumer,South,P301,Notebook Pack,Office Supplies,4,12.00,5.00,0.00
+O1005,2026-02-02,C004,Small Business,Northeast,P202,Standing Desk,Furniture,1,450.00,320.00,0.20
+O1006,2026-02-10,C005,Consumer,West,P103,USB-C Hub,Electronics,2,45.00,28.00,0.10
+O1007,2026-02-14,C002,Corporate,West,P302,Printer Paper,Office Supplies,5,9.00,4.50,0.05
+O1008,2026-02-26,C006,Corporate,South,P104,27in Monitor,Electronics,2,240.00,175.00,0.10
+O1009,2026-03-03,C001,Consumer,South,P103,USB-C Hub,Electronics,1,45.00,28.00,0.00
+O1010,2026-03-11,C007,Small Business,Midwest,P201,Office Chair,Furniture,2,220.00,150.00,0.10
+O1011,2026-03-18,C004,Small Business,Northeast,P301,Notebook Pack,6,12.00,5.00,0.00
+O1012,2026-03-27,C008,Consumer,Northeast,P105,Webcam,Electronics,1,70.00,40.00,0.05
+O1013,2026-04-02,C003,Consumer,Midwest,P102,Mechanical Keyboard,Electronics,1,80.00,48.00,0.00
+O1014,2026-04-09,C006,Corporate,South,P202,Standing Desk,Furniture,1,450.00,320.00,0.15
+O1015,2026-04-22,C009,Consumer,West,P302,Printer Paper,8,9.00,4.50,0.10
+O1016,2026-05-05,C010,Corporate,Northeast,P104,27in Monitor,Electronics,3,240.00,175.00,0.05
+O1017,2026-05-16,C002,Corporate,West,P105,Webcam,Electronics,2,70.00,40.00,0.10
+O1018,2026-05-28,C007,Small Business,Midwest,P301,Notebook Pack,10,12.00,5.00,0.00
+O1019,2026-06-04,C001,Consumer,South,P101,Wireless Mouse,Electronics,3,25.00,14.00,0.05
+O1020,2026-06-19,C004,Small Business,Northeast,P201,Office Chair,Furniture,1,220.00,150.00,0.05
