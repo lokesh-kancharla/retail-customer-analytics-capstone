@@ -1,0 +1,33 @@
+let
+    Source = Csv.Document(
+        File.Contents("YOUR_PATH\\retail_sales_clean.csv"),
+        [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]
+    ),
+    PromoteHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    ChangeTypes = Table.TransformColumnTypes(
+        PromoteHeaders,
+        {
+            {"Order_ID", type text},
+            {"Order_Date", type date},
+            {"Customer_ID", type text},
+            {"Customer_Segment", type text},
+            {"Region", type text},
+            {"Category", type text},
+            {"Product", type text},
+            {"Quantity", Int64.Type},
+            {"Unit_Price", type number},
+            {"Revenue", type number},
+            {"Cost", type number},
+            {"Profit", type number}
+        }
+    ),
+    RemoveErrors = Table.RemoveRowsWithErrors(ChangeTypes),
+    RemoveDuplicates = Table.Distinct(RemoveErrors, {"Order_ID", "Product"}),
+    AddProfitMargin = Table.AddColumn(
+        RemoveDuplicates,
+        "Profit_Margin",
+        each if [Revenue] = 0 then null else [Profit] / [Revenue],
+        type number
+    )
+in
+    AddProfitMargin
