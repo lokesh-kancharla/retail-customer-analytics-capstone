@@ -1,0 +1,7 @@
+{
+  "name": "Retail Customer Analytics",
+  "dataColors": ["#1F77B4","#FF7F0E","#2CA02C","#D62728","#9467BD","#8C564B"],
+  "background": "#FFFFFF",
+  "foreground": "#1F2937",
+  "tableAccent": "#1F77B4"
+}
